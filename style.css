@@ -1,0 +1,166 @@
+/* 🌟 Reset Default Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.game-container {
+  width: 90%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 🎯 Title */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 🏆 Scoreboard */
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.score {
+  flex: 1;
+}
+
+.score h2 {
+  font-size: 1.2rem;
+}
+
+.score p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* 🎮 Choices (Buttons) */
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+/* Mobile Alignment: Stack Buttons */
+@media screen and (max-width: 768px) {
+  .choices {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.choice {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.choice:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+/* 🔥 Result Text */
+#result {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  font-weight: bold;
+  animation: bounce 0.5s ease-in-out;
+}
+
+/* 🎭 End Game Popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.popup h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+.popup button {
+  padding: 10px 15px;
+  margin: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.popup button:nth-child(1) {
+  background: #28a745;
+  color: white;
+}
+
+.popup button:nth-child(1):hover {
+  background: #218838;
+}
+
+.popup button:nth-child(2) {
+  background: #dc3545;
+  color: white;
+}
+
+.popup button:nth-child(2):hover {
+  background: #c82333;
+}
+
+/* 🔄 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
